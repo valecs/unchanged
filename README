@@ -12,27 +12,30 @@ Simple invocation of
 
 $ make clean all
 
-should be sufficient to build. Copy ./bin/unchanged to somewhere in
-your path to use.
+should be sufficient to build. Copy ./bin/unchanged to somewhere in your path to
+use.
 
 
 USAGE
 
-Unchanged makes it easy to add inotify(7) functionality to a
-script. This is useful any time one wants to execute something
-whenever a file changes. For instance, this project is built with
-every modification to a source file as follows:
+Unchanged makes it easy to add inotify(7) functionality to a script. This is
+useful any time one wants to execute something whenever a file changes. For
+instance, this project is built with every modification to a source file as
+follows:
 
 $ while ! unchanged $(make echo); do make; done;
 
-The echo target in the make file outputs a list of sources, which
-unchanged then monitors for changes. Unchanged exits with non-zero
-status when a file changes. The exit code is the 1-indexed position of
-the first changed file in the argument list.
+The echo target in the make file outputs a list of sources, which unchanged then
+monitors for changes. Unchanged exits with non-zero status when a file
+changes. The exit code is the 1-indexed position of the first changed file in
+the argument list.
 
-Future ideas:
+
+IDEAS
+
 * Support verbose output via an environmental variable
 
-Known bugs:
-* If you monitor more than 255 files simultaneously, exit
-  codes will wrap.
+
+BUGS
+
+* If you monitor more than 255 files simultaneously, exit codes will wrap.
