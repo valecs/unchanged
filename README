@@ -34,7 +34,7 @@ the argument list.
 IDEAS
 
 * Support verbose output via an environmental variable
-
+* Use exit code 0 to indicate change via environmental variable
 
 BUGS
 

@@ -54,15 +54,16 @@ int main(int argc, char * argv[argc]){
   }
   memset(e, 0, len);
 
-  //blocks until read; catch signal
-  if (-1 == read (fd, e, len)){
+  // read blocks read; catch signal
+  if (-1 == read(fd, e, len)){
     fprintf(stderr, "Interrupted.\n");
+    free(e);
     return FAILURE;
   }
   close(fd);
 
   int idx = 0;
-  for(; wd[idx] != e->wd && idx < argc; idx++);
+  for(; (idx < argc) && (wd[idx] != e->wd); idx++);
   free(e);
 
   // 1-indexed return
