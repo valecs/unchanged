@@ -38,7 +38,7 @@ int main(int argc, char * argv[argc]){
   }
 
   if (!n){
-    fprintf(stderr, "No watchable files listed.\n");
+    fprintf(stderr, "No watchable files listed. Invoke without arguments for usage.\n");
     return FAILURE;
   }
 
