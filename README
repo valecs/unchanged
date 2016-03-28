@@ -1,4 +1,4 @@
-DESCRIPTION
+USAGE
 
 unchanged - waits until file(s) change.
 Usage: unchanged FILE [FILES...]
@@ -16,7 +16,7 @@ should be sufficient to build. Copy ./bin/unchanged to somewhere in your path to
 use.
 
 
-USAGE
+DESCRIPTION
 
 Unchanged makes it easy to add inotify(7) functionality to a script. This is
 useful any time one wants to execute something whenever a file changes. For
