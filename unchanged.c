@@ -47,12 +47,11 @@ int main(int argc, char * argv[argc]){
       sizeof(struct inotify_event) + NAME_MAX + 1
    */
   const size_t len = sizeof(struct inotify_event);
-  struct inotify_event * e = malloc(len);
+  struct inotify_event * e = calloc(1, len);
   if(!e){
     fprintf(stderr, "No memory left.\n");
     return FAILURE;
   }
-  memset(e, 0, len);
 
   // read blocks read; catch signal
   if (-1 == read(fd, e, len)){
